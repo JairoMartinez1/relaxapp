@@ -21,13 +21,14 @@ class NameScreen extends StatelessWidget {
 class NameScreenUI extends StatelessWidget {
   final screenHeight;
   final screenWidth;
-  NameScreenUI(this.screenHeight, this.screenWidth);
+
+  const NameScreenUI(this.screenHeight, this.screenWidth);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Container(
+        child: SizedBox(
           height: screenHeight,
           width: screenWidth,
           child: Column(
@@ -36,38 +37,27 @@ class NameScreenUI extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Image.asset(
-                      'assets/outline_arrow.png',
-                      scale: 1.8,
-                    ),
-                    SizedBox(width: 5),
-                    Text(
-                      'Atras',
-                      style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
+                    Image.asset('assets/outline_arrow.png', scale: 1.8,),
+                    const SizedBox(width: 5),
+                    const Text('Atras',
+                      style: TextStyle(fontSize: 16,
+                      fontWeight: FontWeight.w300),
                     )
                   ],
                 ),
-                onTap: () {
-                  Navigator.of(context).pop();
+                onTap: () { Navigator.of(context).pop();
                 },
               ),
-              SizedBox(height: 15),
-              Text(
-                'Hola Juan',
-                style: TextStyle(
-                  fontSize: 18,
+              const SizedBox(height: 15),
+              const Text('Hola Jairo',
+                style: TextStyle( fontSize: 18,),
+              ),
+              const SizedBox(height: 5),
+              Text('¡ Bienvenido !',
+                style: TextStyle( fontSize: 15, color: Colors.blue[700],
                 ),
               ),
-              SizedBox(height: 5),
-              Text(
-                ' ¡ Bienvenido !',
-                style: TextStyle(
-                  fontSize: 15,
-                  color: Colors.blue[700],
-                ),
-              ),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   onPrimary: Colors.white,
@@ -85,7 +75,13 @@ class NameScreenUI extends StatelessWidget {
                     }),
                   );
                 },
-                child: Text('INICIEMOS'),
+                child: const Text(
+                  'NEXT',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  ),
+                ),
               ),
             ],
           ),
